@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Less Flor Art</title>
+  <style>
+    body {
+      background-color: #f4cbc4;
+      color: #6a3839;
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .gallery img {
+      max-width: 200px;
+      margin: 20px;
+      transition: transform 0.3s ease-in-out;
+      border: 2px solid #6a3839;
+      border-radius: 8px;
+    }
+    
+    .gallery img:hover {
+      transform: scale(1.2);
+    }
+    
+    .invite-section {
+      text-align: center;
+      margin-top: 50px;
+    }
+    
+    .invite-section p {
+      margin-bottom: 10px;
+    }
+    
+    .invite-section a {
+      color: #6a3839;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    
+    /* Estilos para la visualización de la imagen en pantalla completa */
+    .fullscreen-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    
+    .fullscreen-image img {
+      max-height: 90%;
+      max-width: 90%;
+    }
+  </style>
+  <script>
+    // Función para mostrar una imagen en pantalla completa
+    function showFullscreenImage(src) {
+      var fullscreenDiv = document.createElement("div");
+      fullscreenDiv.className = "fullscreen-image";
+      fullscreenDiv.onclick = function() {
+        document.body.removeChild(fullscreenDiv);
+      };
+
+      var img = document.createElement("img");
+      img.src = src;
+      fullscreenDiv.appendChild(img);
+
+      document.body.appendChild(fullscreenDiv);
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Less Flor Art</h1>
+    
+    <div class="gallery">
+      <img src="naruto.jpg" alt="Trabajo 1" onclick="showFullscreenImage('naruto.jpg')">
+      
+      <img src="galaxia.jpg" alt="Trabajo 2" onclick="showFullscreenImage('galaxia.jpg')">
+      
+      <img src="niño.jpg" alt="Trabajo 3" onclick="showFullscreenImage('niño.jpg')">
+      
+      <img src="bouquet.jpg" alt="Trabajo 4" onclick="showFullscreenImage('bouquet.jpg')">
+      
+      <img src="corazon.jpg" alt="Trabajo 5" onclick="showFullscreenImage('corazon.jpg')">
+      
+      <img src="tenis.jpg" alt="Trabajo 6" onclick="showFullscreenImage('tenis.jpg')">
+    </div>
+    
+    
+    <div class="invite-section">
+      <p>¡Bienvenidos a Less Flor Art!</p>
+      <p>Te invitamos a pasar y explorar nuestros increíbles trabajos.</p>
+      <p>No olvides seguirnos en nuestras redes sociales:</p>
+      <p>Facebook: <a href="https://www.facebook.com/profile.php?id=100091259498159">LessFlorArt</a></p>
+    </div>
+  </div>
+</body>
+</html>
